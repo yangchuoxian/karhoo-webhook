@@ -32,7 +32,7 @@ func main() {
 func receiveWebhookData(w http.ResponseWriter, r *http.Request) {
 	signature := ""
 	for k, v := range r.Header {
-		if k == "x-karhoo-request-signature" {
+		if k == "X-Karhoo-Request-Signature" {
 			writeToLog("------------------ the header: " + strings.Join(v[:], ","))
 			signature = strings.Join(v[:], ",")
 			break
